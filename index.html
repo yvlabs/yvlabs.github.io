@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            /* Reset default margin */
+        }
+
+        iframe {
+            display: block;
+            /* iframes are inline by default */
+            border: none;
+            /* Reset default border */
+            height: 100vh;
+            /* Viewport-relative units */
+            width: 100vw;
+        }
+    </style>
+
+<body>
+    <iframe id='myIframe' src=""
+        sandbox="allow-same-origin allow-scripts allow-downloads allow-popups allow-forms allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+        allow="geolocation; microphone; camera; midi; encrypted-media; autoplay; accelerometer; magnetometer; gyroscope; vr"></iframe>
+
+        <script>
+
+
+            changeDest();
+            function changeDest() {
+                // We need to pass along url params
+                var loc = window.location.toString(),
+                    params = loc.split('?')[1],
+                    iframe = document.getElementById('myIframe');
+                    https://observablehq.com/embed/41eb13e958a09485?user=alice@gmail.com&project=TaskBrokenLinks
+                dest = "https://observablehq.com/embed/41eb13e958a09485?" + params
+                console.log("dest " + dest)
+                iframe.src = dest
+            }
+        </script>
+</body>
+</head>
+
+</html>
